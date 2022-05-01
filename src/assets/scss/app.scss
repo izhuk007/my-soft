@@ -1,0 +1,10 @@
+@import '../../../node_modules/normalize.css/normalize.css';
+@import './helpers/variables'; // Переменные
+@import './helpers/mixins'; // Миксины
+@import './helpers/fonts'; // Шрифты
+@import './helpers/basics'; // Основные общие стили
+@import './components/header';
+@import './components/intro';
+@import './blocks/container';
+@import './blocks/button';
+@import './blocks/logo';

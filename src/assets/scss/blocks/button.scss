@@ -1,0 +1,29 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: em(50, $fz);
+    transition: background-color $ease-main;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        padding: em(39 59, $fz);
+        border-radius: inherit;
+        border: 1px solid $color-basic;
+        transition: border-color $ease-main;
+    }
+
+    &__label {
+        font-weight: 500;
+        line-height: em(20, $fz);
+    }
+
+    &:hover {
+        background-color: $color-main;
+
+        .button__container {
+            border-color: transparent;
+        }
+    }
+  }

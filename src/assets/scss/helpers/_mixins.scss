@@ -1,0 +1,72 @@
+/*
+Миксин для медиа-запросов
+Пример использования:
+div {
+  @include screen('phone') {
+    // Правила для разрешений выше 'phone'
+  }
+
+  @include screen('phone', max) {
+    // Правила для разрешений ниже 'phone'
+  }
+}
+*/
+@mixin screen($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @if $type == max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+/*
+Функция обрезающая единицы измерения и возвращающая число
+*/
+
+@function strip-units($number) {
+  @return calc($number / ($number * 0 + 1));
+}
+
+/*
+Миксин для подключения шрифтов.
+*/
+@mixin font-face($name, $style, $weight, $fontname) {
+  $path: '../fonts/';
+
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url(''+$path+$fontname+'.woff2') format('woff2'),
+  url(''+$path+$fontname+'.woff') format('woff');
+  }
+}
+
+/*
+  Функция возвращающая значение в em
+ */
+
+@function em($values...) {
+  $context: strip-units(nth($values, length($values)));
+  $result: ();
+  $separator: list_separator($values);
+  @for $i from 1 through length($values) - 1 {
+    $value: nth($values, $i);
+    @if type-of($value) == 'number' {
+      $value: strip-units($value);
+      $result: append($result, calc($value / $context) * 1em, $separator);
+    } @else if type-of($value) == 'list' {
+      $result: append($result, em(append($value, $context) ...), $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+  @return if(length($result) == 1, nth($result, 1), $result);
+}

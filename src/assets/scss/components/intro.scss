@@ -1,0 +1,16 @@
+.intro__buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.intro__button {
+    margin-bottom: em(12, $fz);
+    
+    &:not(:last-child) {
+        margin-right: em(12, $fz);
+    }
+
+    &:nth-last-child(2) {
+        margin-left: em(180, $fz);
+    }
+}

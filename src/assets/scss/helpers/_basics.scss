@@ -1,0 +1,117 @@
+button::-moz-focus-inner {
+  border: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  &::placeholder {
+    color: $color-placeholder;
+  }
+}
+
+/* ##########
+Настройки для автозаполнения Chrome
+########## */
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $color-input !important; // Поменять цвет на аналогичный цвету input
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 50000000000s ease-in-out 0s !important; // Убираем желтую заливку для автозаполнения в Chrome
+}
+
+html {
+  font-size: $fz + px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font;
+  font-size: em($fz, $fz_base);
+  color: $color-basic;
+  background: $color-bg urL(../images/noise.png);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ul,
+ol,
+li,
+tr,
+td,
+th,
+table,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  color: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+span {
+  font-style: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+select,
+input,
+textarea,
+button {
+  color: $color-input;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: $font;
+}

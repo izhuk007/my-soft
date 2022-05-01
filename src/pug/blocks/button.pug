@@ -1,0 +1,4 @@
+mixin button(title)
+    #{tag||'button'}.button&attributes(attributes)
+        span(tabindex='-1').button__container            
+            span.button__label=title

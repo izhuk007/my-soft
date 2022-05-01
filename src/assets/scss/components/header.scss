@@ -1,0 +1,23 @@
+.header {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: em(17, $fz);
+        padding-bottom: em(15, $fz);
+    }
+
+    &__buttons {
+        display: flex;
+    }
+
+    &__button {
+        & + & {
+          margin-left: em(12, $fz);
+        }
+        
+        .button__container {
+          padding: em(23 39, $fz);
+        }
+    }
+}

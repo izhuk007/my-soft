@@ -1,0 +1,41 @@
+.logo {
+    display: inline-flex;
+    min-width: em(127, $fz);
+    overflow: hidden;
+    
+    &__container {
+      display: flex;  
+      width: 100%;
+      position: relative;
+      margin-top: em(36, $fz);
+      padding-top: em(8, $fz);
+      
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        border: em(18, $fz) solid transparent;
+        border-right: em(56, $fz) solid hsl(0, 0%, 100%);
+        bottom: 100%;
+      }
+      
+      &::before {
+        left: em(-18, $fz);
+      }
+    
+      &::after {
+        right: em(7, $fz);
+      }
+    }
+    
+    &__label {
+      $fz: 15;
+        
+      font-size: em($fz, $fz_base);
+      font-weight: 500;
+      line-height: em(18, $fz);
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+}
+  
