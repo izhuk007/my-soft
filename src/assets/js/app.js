@@ -1,33 +1,24 @@
-const { active } = require("browser-sync");
+function rotateMain(value) {
+    const wheelInner = document.querySelectorAll('.wheel__inner')
+    deg = 0;
+    for (let item of wheelInner) {
+        item.style.transform = `rotate(${deg}deg)`
+        deg += value;
+    }
 
-const nav = document.getElementById("nav");
-const close = document.getElementById("nav");
-const open = document.getElementById("nav");
+    return value
+}
 
-window.ontouchstart = function (event) {
-  if (event.target == open) {
-    nav.classList.add("active");
-  }
-  if (event.target == close) {
-    nav.classList.remove("active");
-  }
-};
+rotateMain(5);
 
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  //   direction: "vertical",
-  loop: true,
-  slidesPerView: 3,
-  spaceBetween: 30,
-  breakpoints: {
-    575: {
-      slidesPerView: 5,
-    },
-    768: {
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 5,
-    },
-  },
-});
+function rotateOuther(value) {
+    const wheelContent = document.querySelectorAll('.wheel__content')
+    deg = 0;
+    for (let item of wheelContent) {
+        item.style.transform = `rotate(${deg}deg)`
+        deg += value;
+    }
+}
+
+rotateOuther(10)
+
