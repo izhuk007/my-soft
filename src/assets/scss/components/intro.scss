@@ -17,13 +17,69 @@ $duration: 30s;
     }
 }
 
-.wheel {
-    margin: 0 auto;
+// .wheel {
+//     margin: 0 auto;
+//     position: relative;
+//     width: 265px;
+//     height: 265px;
+//     border-radius: 50%;
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         width: em(12, $fz);
+//         height: em(12, $fz);
+//         border-radius: 50%;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         background-color: $color-basic;
+//     }
+// }
+
+// .wheel__inner {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+
+//     animation: rotate-main $duration infinite linear;
+// }
+
+// @keyframes rotate-main {
+//     0% {
+//         transform: rotate(0);
+//     }
+
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
+
+// .wheel__letter {
+//     position: absolute;
+//     bottom: 50%;
+//     left: 50%;
+//     width: 0;
+//     transform-origin: 0 100%;
+//     padding-bottom: 150px;
+//     font-size: 2em;
+
+//     animation-name: rotate-outher;
+//     animation-duration: $duration;
+//     animation-fill-mode: forwards;
+// }
+
+// @keyframes rotate-outher {
+//    100% {
+//        transform: rotate(90deg);
+//    }
+// }
+
+.circular {
     position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 3px groove #ccc;
+    display: inline-block;
+    animation: animate 30s linear infinite;
 
     &::before {
         content: '';
@@ -37,49 +93,32 @@ $duration: 30s;
         background-color: $color-basic;
     }
 }
-
-.wheel__inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    animation-name: rotate-main;
-    animation-fill-mode: forwards;
-    animation-duration: $duration;
+    
+text {
+    fill: #F0E8E3;
+    font-weight: 400;
 }
 
-@keyframes rotate-main {
+.circular path { 
+    fill: none;
+}
 
+.circular {
+width: em(264, $fz);
+height: em(264, $fz);
+padding: em(14, $fz);
+}
 
+.circular svg {
+display: block;
+overflow: visible;
+}
 
-    100% {
-        transform: rotate(90deg);
+@keyframes animate {
+    from {
+    transform: rotate(0deg);
     }
-
-
-    100% {
-        transform: rotate(90deg);
+    to {
+    transform: rotate(360deg);
     }
 }
-
-.wheel__content {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    width: 0;
-    transform-origin: 0 100%;
-    outline: 2px dashed yellow;
-    padding-bottom: 150px;
-    font-size: 2em;
-
-    //animation-name: rotate-outher;
-    //animation-duration: $duration;
-    //animation-fill-mode: forwards;
-}
-//
-//@keyframes rotate-outher {
-//    100% {
-//        transform: rotate(90deg);
-//    }
-//}

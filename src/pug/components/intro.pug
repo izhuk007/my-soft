@@ -16,21 +16,34 @@ section.intro
             +button('Руководитель группы разработки').intro__button 
             +button('Cистемный аналитик').intro__button 
             +button('Frontend веб-программист').intro__button
-        .wheel
-            .wheel__inner
-                .wheel__content M
-                .wheel__content a
-                .wheel__content k
-                .wheel__content e
-            .wheel__inner
-                .wheel__content m
-                .wheel__content y
-            .wheel__inner
-                .wheel__content S
-                .wheel__content o
-                .wheel__content f
-                .wheel__content t
-            .wheel__inner
-                .wheel__content /
-
+        //- .wheel
+        //-     .wheel__inner
+        //-         .wheel__letter M
+        //-         .wheel__letter a
+        //-         .wheel__letter k
+        //-         .wheel__letter e
+        //-         .wheel__letter m
+        //-         .wheel__letter y
+        //-         .wheel__letter S
+        //-         .wheel__letter o
+        //-         .wheel__letter f
+        //-         .wheel__letter t
+        //-         .wheel__letter /
+        .circular
+            svg(viewBox='0 0 252 252')
+                path#circle(d='M 0,126 a 126,126 0 1,1 0,1 z')
+                text
+                    textpath(xlink:href='#circle')
+                        tspan(word-spacing="4") Soft / Make
+                        tspan my
+                        tspan(word-spacing="4") Soft / Make
+                        tspan my
+                        tspan(word-spacing="4") Soft / Make
+                        tspan my
+                        tspan(word-spacing="4") Soft / Make
+                        tspan my
+                        tspan(word-spacing="4") Soft / Make
+                        tspan my
+                        tspan(word-spacing="4") Soft / Make
+                        tspan my
 
