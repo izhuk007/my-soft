@@ -1,4 +1,10 @@
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
     &__container {
         display: flex;
         justify-content: space-between;
@@ -12,6 +18,8 @@
     }
 
     &__button {
+      min-height: em(68, $fz);
+
         & + & {
           margin-left: em(12, $fz);
         }

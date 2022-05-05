@@ -6,6 +6,11 @@ head
     title Make my Soft
     link(rel="stylesheet", href="./assets/css/app.css")
 body        
-    include components/header
-    include components/intro
+    .wrapper
+        include components/header
+        include components/main
+        .message
+            | The realIndex for the swiper is: 
+            span.current-slide
+    script(src="./assets/js/vendors.min.js")
     script(src="./assets/js/app.js")

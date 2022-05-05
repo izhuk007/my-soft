@@ -9,7 +9,7 @@ button::-moz-focus-inner {
 input,
 textarea {
   &::placeholder {
-    color: $color-placeholder;
+    color: $color-basic;
   }
 }
 
@@ -18,7 +18,7 @@ textarea {
 ########## */
 
 input:-webkit-autofill {
-  -webkit-text-fill-color: $color-input !important; // Поменять цвет на аналогичный цвету input
+  -webkit-text-fill-color: $color-basic !important; // Поменять цвет на аналогичный цвету input
 }
 
 input:-webkit-autofill,
@@ -38,10 +38,12 @@ body {
   padding: 0;
   box-sizing: border-box;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -49,7 +51,7 @@ body {
   font-family: $font;
   font-size: em($fz, $fz_base);
   color: $color-basic;
-  background: $color-bg urL(../images/noise.png);
+  background-color: $color-bg;
 }
 
 h1,
@@ -107,11 +109,16 @@ select,
 input,
 textarea,
 button {
-  color: $color-input;
+  color: $color-basic;
   margin: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
   background-color: transparent;
   font-family: $font;
+}
+
+.wrapper {
+  background: urL(../images/bg.png);
+  min-height: 100%;
 }

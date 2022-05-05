@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     border-radius: em(50, $fz);
+    min-height: em(100, $fz);
     transition: background-color $ease-main;
 
     &__container {
@@ -20,7 +21,7 @@
     }
 
     &:hover {
-        background-color: $color-main;
+        background-color: $color-second;
 
         .button__container {
             border-color: transparent;
